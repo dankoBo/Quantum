@@ -1,0 +1,368 @@
+$dropdown-content-color: #F1F1F1
+$dropdown-hover-color: #778899
+$background-content-color: #E5E5E5
+$menu-list-color: #FFFFFF
+$url-color: #000000
+$border-color: #A9A9A9
+$border-options: 1px solid #A9A9A9
+$button-color: #FFFFFF
+$menu-text-color: #000
+$filters-hover-color: #0000FF
+
+%items-option
+    color: $url-color
+    padding: 12px 16px
+    text-decoration: none
+    display: block
+    height: 30px
+
+body
+    padding-top: 40px
+    margin: 0
+    font-family: Geneva, Tahoma, sans-serif
+
+header
+    height: 60px
+    width: 995px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 0 auto
+
+.logo_name
+    font-weight: 900
+    font-size: 22px
+    letter-spacing: 1.65px
+
+.search
+    width: 380px
+    height: 50px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &_place
+        border: none
+        outline: none
+    &_img
+        vertical-align: middle
+
+.dropbtn
+    width: 160px
+    height: 40px
+    background-color: $button-color
+    border: $border-options
+
+.dropdown
+    position: relative
+    display: inline-block
+    &:hover .dropdown_content
+        display: block
+    &_content
+        display: none
+        width: 160px
+        position: absolute
+        background-color: $dropdown-content-color
+    &_item
+        @extend %items-option
+        &:hover
+            background-color: $dropdown-hover-color
+
+.user_option
+    vertical-align: middle
+    margin: 0 15px
+    cursor: pointer
+
+.nav_wrapper
+    margin-top: 30px
+    height: 60px
+    border: $border-options
+    display: flex
+    justify-content: center
+
+.navigation
+    border-right: $border-options
+
+.nav_menu
+    padding: 0 45px 0 30px
+    width: 140px
+    height: 60px
+    cursor: pointer
+    line-height: 60px
+    background-image: url(../list.png)
+    background-repeat: no-repeat
+    text-align: center
+    z-index: 1
+  
+.nav
+    position: relative
+    width: 170px
+    z-index: 2
+    display: none
+    &_item 
+        display: block
+        height: 56px
+        font-weight: bold
+        color: $url-color
+        font-size: 14px
+        line-height: 56px
+        text-align: center
+        text-decoration: none
+        background-color: $dropdown-content-color
+        &:hover, &:active
+            background-color: $dropdown-hover-color
+
+.nav_menu_checkbox 
+    display: none
+    line-height: 60px
+    &:checked + .nav_menu
+        background-image: url(../cancel.png)
+        background-repeat: no-repeat
+
+.nav_menu_checkbox:checked ~ .nav 
+    display: block
+
+.menu
+    width: 545px
+    height: 60px
+    border-right: $border-options
+    &_item
+        margin: 20px
+        line-height: 60px
+        text-decoration: none
+        color: $url-color
+        
+.help
+    border-right: $border-options
+    &:hover .help_content
+        display: block
+    &_btn
+        width: 105px
+        height: 60px
+        background-color: $button-color
+        border: none
+    &_content
+        display: none
+        width: 105px
+        position: absolute
+        text-align: center
+        background-color: $dropdown-content-color
+    &_item
+        @extend %items-option
+        &:hover
+            background-color: $dropdown-hover-color
+
+.currency
+    border-right: $border-options
+    &:hover .currency_content
+        display: block
+    &_btn
+        width: 105px
+        height: 60px
+        background-color: $button-color
+        border: none
+    &_content
+        display: none
+        width: 105px
+        position: absolute
+        text-align: center
+        background-color: $dropdown-content-color
+    &_item
+        @extend %items-option
+        &:hover
+            background-color: $dropdown-hover-color
+
+.language
+    &:hover .language_content
+        display: block
+    &_btn
+        width: 105px
+        height: 60px
+        background-color: $button-color
+        border: none
+    &_content
+        display: none
+        width: 105px
+        position: absolute
+        text-align: center
+        background-color: $dropdown-content-color
+    &_item
+        @extend %items-option
+        &:hover
+            background-color: $dropdown-hover-color
+
+.information_wrapper
+    background-color: $background-content-color
+
+.promo_img
+    display: block
+    height: 330px
+    width: 1110px
+    margin: 0 auto
+    padding-top: 30px
+    
+.main
+    margin-top: 30px
+    display: flex
+    justify-content: center
+
+.product_card
+    margin-right: 25px
+
+.news_two
+    margin-top: 25px
+
+.main_content
+    padding: 30px 0
+    background-color: $background-content-color
+    display: flex
+    justify-content: center
+    
+.side
+    width: 255px
+    height: 600px
+    &_menu a
+        color: $menu-text-color
+        margin-top: 2px
+        line-height: 60px
+        display: block
+
+a
+    text-decoration: none
+    height: 60px
+
+ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+.menu_img
+    vertical-align: middle
+    margin: 0px 15px 0px 15px
+
+.menu_list
+    position: relative
+    height: 60px
+    background-color: $menu-list-color
+    transition: 0.5s
+    &:hover
+        background-color: $dropdown-hover-color
+    &:hover .menu_drop
+        display: block
+
+.menu_drop
+    position: absolute
+    width: 100%
+    left: 100%
+    top: 0
+    display: none
+    & a
+        background-color: $menu-list-color
+        padding-left: 30px
+        margin-left: 2px
+        &:hover
+            background-color: $dropdown-hover-color
+
+.promo
+    height: 330px
+    width: 255px
+    margin-top: 20px
+    background-color: $menu-list-color
+    text-align: center
+    &_text
+        line-height: 330px
+        font-weight: bold
+        font-size: 20px
+
+.all_products
+    margin-left: 30px
+
+.filters
+    width: 825px
+    height: 60px
+    background-color: $menu-list-color
+    &_item
+        line-height: 60px
+        margin: 0 25px 0 25px
+        text-decoration: none
+        color: $menu-text-color
+        &:hover
+            color: $filters-hover-color
+    &_position
+        display: inline-block
+        height: 60px
+        width: 60px
+        margin-left: 2px
+        border-left: $border-options
+        float: right
+
+.position_item
+    line-height: 70px
+    margin-left: 15px
+
+.products_wrapper
+    margin-top: 30px
+
+.products_item
+    padding-left: 10px
+
+.contacts
+    height: 120px
+    display: flex
+    justify-content: center
+    &_logo
+        margin-right: 170px
+        line-height: 120px
+    &_dropdawn
+        margin-top: 50px
+        &:hover .contacts_content
+            display: block
+    &_link
+        margin: 0px 25px
+        color: $url-color
+        line-height: 120px
+    &_content
+        display: none
+        width: 85px
+        position: absolute
+        text-align: center
+        background-color: $dropdown-content-color
+    &_item
+        color: $url-color
+        padding: 12px
+        text-decoration: none
+        display: block
+        height: 20px
+        &:hover
+            background-color: $dropdown-hover-color
+    &_social
+        margin-left: 60px
+        line-height: 120px
+
+.dropdawn_link
+    color: $url-color
+    margin-right: 25px
+    padding: 25px
+
+.social_img
+    margin-left: 30px
+    height: 20px
+    width: 20px
+
+.footer
+    height: 120px
+    border-top: 1px solid
+    display: flex
+    justify-content: center
+    &_copyright
+        margin-right: 130px
+        line-height: 120px
+    &_payments
+        line-height: 120px
+        margin-left: 20px
+
+.copyright_link
+    margin-left: 30px
+    color: $url-color
+
+.payments_img
+    vertical-align: middle
